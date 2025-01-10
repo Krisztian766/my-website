@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czeczó Krisztián</title>
+
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #111;
+    overflow: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    position: relative;
+}
+
+/* Light/Dark mode toggle */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+/* Continuous star animation */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    z-index: -1;
+    animation: starsAnimation 50s linear infinite;
+}
+
+@keyframes starsAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Profile image */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for image */
+.profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Content layout */
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Text animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 3s 0.5s forwards;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 4s 1s forwards;
+}
+
+/* Social media icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0073e6;
+    transform: scale(1.2);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: #0073e6;
+}
+
+/* CV icon */
+.cv-icon {
+    font-size: 2rem;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.cv-icon:hover {
+    transform: scale(1.2);
+    color: #0073e6;
+}
+
+/* Light mode colors */
+body.light-mode .social-icons a,
+body.light-mode .cv-icon {
+    color: #111; /* Darker icon color in light mode */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+}
+</style>
+
+
+    
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Starry background -->
+<div class="stars"></div>
+
+<!-- Theme toggle button -->
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+<!-- Main content -->
+<div class="content">
+    <div class="profile">
+        <img src="cvphoto.jpg" alt="Czeczó Krisztián" class="profile-img">
+    </div>
+    <div class="info">
+        <h1>Czeczó Krisztián</h1>
+        <p> Pentester / Cybersecurity / Entrepreneur </p>
+        <div class="social-icons">
+            <a href="https://github.com/krisztian766" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/czeczokrisztian" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+             <a href="cv.pdf" download class="cv-icon">
+            <i class="fas fa-file-pdf"></i>
+        </a>
+    </div>
+</div>
+
+<script>
+
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const themeButton = document.querySelector('.theme-toggle');
+        themeButton.textContent = document.body.classList.contains('light-mode') ? '🌞' : '🌙';
+    }
+</script>
+
+</body>
+</html>

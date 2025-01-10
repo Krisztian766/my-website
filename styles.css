@@ -1,0 +1,157 @@
+/* Base CSS */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #111;
+    overflow: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    position: relative;
+}
+
+/* Light/Dark mode toggle */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+/* Continuous star animation */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    z-index: -1;
+    animation: starsAnimation 50s linear infinite;
+}
+
+@keyframes starsAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Profile image */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for image */
+.profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Content layout */
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Text animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 3s 0.5s forwards;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 4s 1s forwards;
+}
+
+/* Social media icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0073e6;
+    transform: scale(1.2);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: #0073e6;
+}
+
+/* CV icon */
+.cv-icon {
+    font-size: 2rem;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.cv-icon:hover {
+    transform: scale(1.2);
+    color: #0073e6;
+}
+
+/* Light mode colors */
+body.light-mode .social-icons a,
+body.light-mode .cv-icon {
+    color: #111; /* Darker icon color in light mode */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+}
