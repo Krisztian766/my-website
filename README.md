@@ -1,10 +1,10 @@
 # Czech Krisztián - Personal Portfolio
 
-Welcome to my personal portfolio website! This project serves as my digital presence, showcasing my expertise in cybersecurity, penetration testing, and entrepreneurship.
+Welcome to my personal portfolio website! 
 
 ## Live Demo
 
-You can view the live version of the website here: site (https://czeczokrisztian.com/)
+You can view the live version of the website here: https://czeczokrisztian.com/
 
 ## Features
 
